@@ -9,15 +9,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
+        primaryColor: Colors.purple,
+        primarySwatch: Colors.teal,
+        scaffoldBackgroundColor: Colors.tealAccent.shade100,
         appBarTheme: const AppBarTheme(
           color: Colors.teal,
-          titleTextStyle: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          )
+          titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
+        textTheme: TextTheme(
+          headlineMedium: TextStyle(
+            color: Colors.black,
+          )
+        )
       ),
       home: const Home(),
-      );
+    );
   }
 }
