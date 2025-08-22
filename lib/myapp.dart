@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_expense_tracker/home.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,18 +10,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.purple,
         primarySwatch: Colors.teal,
         scaffoldBackgroundColor: Colors.tealAccent.shade100,
         appBarTheme: const AppBarTheme(
           color: Colors.teal,
-          titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          titleTextStyle: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        textTheme: TextTheme(
-          headlineMedium: TextStyle(
-            color: Colors.black,
-          )
-        )
+        
+        textTheme: GoogleFonts.poppinsTextTheme(
+          Theme.of(context).textTheme, // keeps default sizes/colors
+        ),
+
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Colors.teal,
+          foregroundColor: Colors.white,
+        ),
       ),
       home: const Home(),
     );
